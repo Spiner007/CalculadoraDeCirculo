@@ -463,6 +463,7 @@ footer p {
 
 a {
     color: #1e0afc;
+    white-space: nowrap;
 }
 
 .calculator button[type="button"] {
