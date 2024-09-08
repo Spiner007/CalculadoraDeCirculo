@@ -1,0 +1,29 @@
+Licencia de Uso Restringido
+
+Copyright (c) 2024 JOHN-SOFTWARE
+
+Este software y su código fuente están protegidos por derechos de autor. El uso de este software está sujeto a los siguientes términos:
+
+Permisos
+
+* Uso Personal: Se concede permiso para usar este software únicamente para fines personales y no comerciales.
+
+* Distribución No Autorizada: No se permite la distribución de copias del software, ni en su forma original ni modificada.
+
+Restricciones
+
+* Modificación Prohibida: No se permite modificar, adaptar, traducir, descompilar, realizar ingeniería inversa o crear trabajos derivados basados en este software.
+
+* Uso Comercial Prohibido: No se permite utilizar este software para fines comerciales sin el consentimiento expreso por escrito del autor.
+
+* Redistribución Prohibida: No se permite redistribuir el software en ninguna forma, incluyendo la publicación en sitios web, servicios de alojamiento de código o cualquier otro medio.
+
+Limitación de Responsabilidad
+
+Este software se proporciona "tal cual", sin garantía de ningún tipo, expresa o implícita. En ningún caso el autor o los titulares de derechos de autor serán responsables de ningún reclamo, daño u otra responsabilidad, ya sea en una acción de contrato, agravio o cualquier otra situación, que surja del uso del software.
+
+Contacto
+
+Para obtener permisos especiales, uso comercial o cualquier consulta relacionada con esta licencia, por favor contacta a jhonrt2555@gmail.com.
+
+Esta licencia es válida hasta su cancelación por parte del autor.
