@@ -34,10 +34,11 @@ header p {
     max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
+    
 }
 
 .calculator {
-    background-color: #fff;
+    background-color: #d3d3d3;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,22 +48,27 @@ header p {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
+   
 }
 
 input[type="number"] {
     width: calc(100% - 120px);
     padding: 8px;
     margin-right: 10px;
+    color: #000000;
+    border-color: #000000;
 }
 
 
 select {
     padding: 8px;
+    background-color: #c9c5c5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 button {
@@ -135,7 +141,8 @@ body.dark-mode .calculator select,
 body.dark-mode .calculator button {
     background-color: #555;
     color: #ddd;
-    border: 1px solid #604646;
+    border: 1px solid #000000;
+    border 
 }
 
 body.dark-mode .calculator button:hover {
