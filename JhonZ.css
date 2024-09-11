@@ -466,7 +466,7 @@ body.dark-mode .calculator button:active {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1001;
-    
+    box-sizing: border-box;
     
 }
 
@@ -486,7 +486,7 @@ body.dark-mode .calculator button:active {
     position: absolute;
     top: 270px; 
     left: 0;
-    width: auto;
+    width: 100%;
     background-color: #373333;
     color: white;
     justify-content: space-between;
