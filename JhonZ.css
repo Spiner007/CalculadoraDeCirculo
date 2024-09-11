@@ -464,10 +464,11 @@ body.dark-mode .calculator button:active {
     
 
 .header {
+    width: 100%;
     position: relative;
     top: 0;
-    left: 0px;
-    right: 0px;
+    left: auto;
+    right: auto;
     background-color: #9c1212;
     color: white;
     display: flex;
@@ -476,19 +477,20 @@ body.dark-mode .calculator button:active {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1001;
-    
+    box-sizing: border-box;
     
 }
 
 .hamburger-icon {
     font-size: 24px;
     cursor: pointer;
+    
 }
 
 .john-software-text {
     font-size: 20px;
     font-weight: bold;
-    
+  
 }
 
 .taskbar {
