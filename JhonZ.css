@@ -467,8 +467,8 @@ body.dark-mode .calculator button:active {
     width: 100%;
     position: relative;
     top: 0;
-    left: auto;
-    right: auto;
+    left: 0;
+    right: 0;
     background-color: #9c1212;
     color: white;
     display: flex;
