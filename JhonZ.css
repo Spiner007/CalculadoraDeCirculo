@@ -428,12 +428,13 @@ a {
     text-align: center;
 }
 
-    @media  (max-width: 300px) {
-        a {
-        font-size: 14px; /* Ajusta el tamaño del texto */
-          padding: 5px; /* Reduce el padding en pantallas pequeñas */
-        }
-      }
+  @media screen and (max-width: 768px) {
+  footer {
+    font-size: 14px; /* Ajusta el tamaño del texto en móviles */
+    padding: 1em;
+  }
+}
+
       
     
 
