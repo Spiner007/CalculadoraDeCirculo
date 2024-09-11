@@ -428,7 +428,7 @@ a {
     text-align: center;
 }
 
-    @media  (max-width: 600px) {
+    @media  (max-width: 300px) {
         a {
         font-size: 14px; /* Ajusta el tamaño del texto */
           padding: 5px; /* Reduce el padding en pantallas pequeñas */
