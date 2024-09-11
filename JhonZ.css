@@ -425,7 +425,17 @@ footer p {
 a {
     color: #f401ec;
     white-space: nowrap;
+    text-align: center;
 }
+
+    @media  (max-width: 600px) {
+        a {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+          padding: 5px; /* Reduce el padding en pantallas pequeñas */
+        }
+      }
+      
+    
 
 .calculator button[type="button"] {
     background-color: #007bff; 
