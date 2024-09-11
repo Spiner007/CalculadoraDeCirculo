@@ -205,12 +205,12 @@ function redirectToPage(url) {
 
 
 
-let taskbarVisible = true;
+let taskbarVisible = false;
 
 document.getElementById('hamburger').addEventListener('click', function() {
     const taskbar = document.getElementById('taskbar');
     if (taskbarVisible) {
-        taskbar.style.transform = 'translateX(100%)'; 
+        taskbar.style.transform = 'translateX(-100%)'; 
         setTimeout(() => {
             taskbar.style.display = 'none'; 
         }, 300); 
@@ -225,7 +225,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
 
 document.getElementById('closeTaskbar').addEventListener('click', function() {
     const taskbar = document.getElementById('taskbar');
-    taskbar.style.transform = 'translateX(100%)'; 
+    taskbar.style.transform = 'translateX(-100%)'; 
     setTimeout(() => {
         taskbar.style.display = 'none'; 
     }, 300); 

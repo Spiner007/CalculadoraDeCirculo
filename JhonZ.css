@@ -1,6 +1,5 @@
 
 body {
-    display: none;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -418,30 +417,14 @@ body.dark-mode .john-software-button:active {
 
 
 
-a {
-    color: #f401ec;
-    white-space: nowrap;
-    text-align: center;
-}
-
-  @media screen and (max-width: 768px) {
-  footer {
-    font-size: 14px; /* Ajusta el tamaño del texto en móviles */
-    padding: 1em;
-  }
-}
-
-      
-    
-
 .calculator button[type="button"] {
     background-color: #007bff; 
     color: #fff; 
 }
 
 .calculator button[type="reset"] {
-    background-color: #ff0000;  */
-    color: #fff;
+    background-color: #ff0000;  
+    color: #fff; 
 }
 
 
@@ -471,11 +454,10 @@ body.dark-mode .calculator button:active {
     
 
 .header {
-    width: 100%;
     position: relative;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 0px;
+    right: 0px;
     background-color: #9c1212;
     color: white;
     display: flex;
@@ -484,27 +466,26 @@ body.dark-mode .calculator button:active {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1001;
-    box-sizing: border-box;
+    
     
 }
 
 .hamburger-icon {
     font-size: 24px;
     cursor: pointer;
-    
 }
 
 .john-software-text {
     font-size: 20px;
     font-weight: bold;
-  
+    
 }
 
 .taskbar {
-    display: none; 
+    display: fixed; 
     position: absolute;
-    top: 240px; 
-    right: 0;
+    top: 270px; 
+    left: 0;
     width: auto;
     background-color: #373333;
     color: white;
@@ -513,6 +494,7 @@ body.dark-mode .calculator button:active {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
     
 }
@@ -544,4 +526,17 @@ body.dark-mode .calculator button:active {
 
 .dark-mode-toggle label {
     font-size: 16px;
+}
+
+a {
+    color: #f401ec;
+    white-space: nowrap;
+    width: 100vw; 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 1em; 
+     float: none; 
+     clear: both; 
+    position: relative; 
+    
 }
