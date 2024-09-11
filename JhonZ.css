@@ -14,7 +14,7 @@ body {
 
 header {
     width: 100%;
-    background-color: #007bff;
+    background-color: #0026ff;
     color: white;
     text-align: center;
     padding: 20px;
@@ -316,45 +316,6 @@ body.dark-mode .calculator button:active {
 }
 
 
-.dark-mode-switch {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-
-.dark-mode-switch input[type="checkbox"] {
-    display: none;
-}
-
-
-.switch-label {
-    width: 60px;
-    height: 60px;
-    background-color: #f1f3f6b4;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(248, 248, 247, 0.403);
-    transition: background-color 0.3s ease;
-}
-
-
-.bulb {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 30px;
-    height: 30px;
-    background-color: #fffafa;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgb(246, 244, 244);
-    transition: opacity 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-}
-
 
 .dark-mode-switch input[type="checkbox"]:checked + .switch-label {
     background-color: #fbf8f8;
@@ -462,7 +423,7 @@ footer p {
 
 
 a {
-    color: #1e0afc;
+    color: #f401ec;
     white-space: nowrap;
 }
 
@@ -498,32 +459,80 @@ body.dark-mode .calculator button:active {
     opacity: 1;
 }
 
-.john-software-button {
-    font-size: 20px; 
-    padding: 8px 16px; 
+
+        
+    
+
+.header {
+    position: relative;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    background-color: #9c1212;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    
+    
 }
 
-@supports (-ms-ime-align:auto) {
-  
-    .john-software-button {
-        font-size: 18px; 
-    }
+.hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
 }
 
-
-@media only screen and (max-width: 768px) {
-    .john-software-button {
-        font-size: 18px;  
-        padding: 8px 16px; 
-    }
+.john-software-text {
+    font-size: 20px;
+    font-weight: bold;
+    
 }
 
+.taskbar {
+    display: none; 
+    position: absolute;
+    top: 240px; 
+    right: 0;
+    width: auto;
+    background-color: #373333;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    
+}
 
-@supports (-ms-ime-align:auto) {
-    @media only screen and (max-width: 1024px) {
-        .john-software-button {
-            font-size: 16px;  
-            padding: 6px 12px; 
-        }
-    }
+.taskbar-content {
+    display: flex;
+    align-items: center;
+}
+
+.taskbar-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.dark-mode-toggle label {
+    font-size: 16px;
 }

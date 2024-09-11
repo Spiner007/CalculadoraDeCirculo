@@ -183,9 +183,6 @@ function isValidNumber(value) {
 }
 
 
-// Redireccionar solo si es necesario y seguro
-
-
 function redirectToPage(url) {
     const allowedDomains = ['pagina_error.html'];
     const urlObj = new URL(url);
@@ -206,6 +203,37 @@ function redirectToPage(url) {
     }
 }
 
+
+
+let taskbarVisible = true;
+
+document.getElementById('hamburger').addEventListener('click', function() {
+    const taskbar = document.getElementById('taskbar');
+    if (taskbarVisible) {
+        taskbar.style.transform = 'translateX(100%)'; 
+        setTimeout(() => {
+            taskbar.style.display = 'none'; 
+        }, 300); 
+    } else {
+        taskbar.style.display = 'flex'; 
+        setTimeout(() => {
+            taskbar.style.transform = 'translateX(0)'; 
+        }, 10); 
+    }
+    taskbarVisible = !taskbarVisible; 
+});
+
+document.getElementById('closeTaskbar').addEventListener('click', function() {
+    const taskbar = document.getElementById('taskbar');
+    taskbar.style.transform = 'translateX(100%)'; 
+    setTimeout(() => {
+        taskbar.style.display = 'none'; 
+    }, 300); 
+});
+
+document.getElementById('darkModeSwitch').addEventListener('change', function() {
+    document.body.classList.toggle('dark-mode', this.checked);
+});
 
 
 //localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 

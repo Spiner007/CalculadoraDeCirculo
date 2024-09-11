@@ -26,7 +26,20 @@
 
 <body>
 
-   
+    <div id="header" class="header">
+        <div id="hamburger" class="hamburger-icon">&#9776;</div> 
+        <div class="john-software-text">JOHN-SOFTWARE.</div>
+    </div>
+    <div id="taskbar" class="taskbar">
+        <div class="taskbar-content">
+            <button id="closeTaskbar" class="taskbar-button">Cerrar</button>
+            <div class="dark-mode-toggle">
+                <input type="checkbox" id="darkModeSwitch">
+                <label for="darkModeSwitch">Modo Oscuro</label>
+            </div>
+        </div>
+    </div>
+    
 
     <div id="eulaModal" class="modal">
         <div class="modal-content">
@@ -45,9 +58,6 @@
         
         <h1>Calculadora de Círculo</h1>
         <div class="dark-mode-switch">
-            <input type="checkbox" id="darkModeCheckbox" onchange="toggleDarkMode()">
-            <label for="darkModeCheckbox" class="switch-label">
-                <span class="bulb"></span>
             </label>
         </div>
         <p>Utiliza esta calculadora para calcular el radio, diámetro, circunferencia y área de un círculo basado en diferentes unidades. Solo ingresa un valor y obtén los resultados automáticamente.</p>
@@ -142,13 +152,6 @@
         </div>
     </div>
   
-    
-    <div class="john-software-button">JOHN-SOFTWARE</div>
-
-    
-
-
-
     <footer>
         <a href="LICENCIA.txt" target="_blank" rel="noopener noreferrer">© 2024 Calculadora.</a>
  </footer>
