@@ -49,6 +49,7 @@ header p {
     display: flex;
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    
 }
 label {
     display: block;
@@ -62,6 +63,7 @@ input[type="number"] {
     margin-right: 10px;
     color: #000000;
     border-color: #000000;
+    background-color:#c9c5c5; 
 }
 
 
@@ -69,6 +71,7 @@ select {
     padding: 8px;
     background-color: #c9c5c5;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    border-color: #000000;
 }
 
 button {
@@ -135,9 +138,18 @@ body.dark-mode .calculator {
     background-color: #444;
     color: #ddd;
 }
+body.dark-mode .calculator select{
+    background-color: rgb(46, 47, 37);
+    color: #f0f0f0;
+}
 
-body.dark-mode .calculator input,
-body.dark-mode .calculator select,
+body.dark-mode .calculator input {
+    background-color: rgb(46, 47, 37);
+    color: #f0f0f0;
+}
+
+
+
 body.dark-mode .calculator button {
     background-color: #555;
     color: #ddd;
