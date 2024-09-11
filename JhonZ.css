@@ -484,7 +484,7 @@ body.dark-mode .calculator button:active {
 .taskbar {
     display: fixed; 
     position: absolute;
-    width: 250px;
+    width: 260px;
     top: 270px; 
     left: 0;
     background-color: #373333;
@@ -506,8 +506,7 @@ body.dark-mode .calculator button:active {
     }
     
     .taskbar-button {
-        margin-left: 30px; 
-        margin-right: 20px; 
+        margin-left: 40px; 
         background-color: #778c9f;
         color: white;
         border: none;
