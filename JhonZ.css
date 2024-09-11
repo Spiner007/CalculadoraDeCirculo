@@ -500,20 +500,28 @@ body.dark-mode .calculator button:active {
 }
 
 .taskbar-content {
-    display: flex;
-    align-items: center;
-}
+     display: flex;
+        justify-content: space-between; 
+        align-items: center;
+    }
+    
+    .taskbar-button {
+        margin-left: 30px; 
+        margin-right: 20px; 
+        background-color: #778c9f;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
 
-.taskbar-button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 20px;
-}
+
+    
+    
+
 
 .dark-mode-toggle {
     display: flex;
@@ -528,15 +536,20 @@ body.dark-mode .calculator button:active {
     font-size: 16px;
 }
 
-a {
-    color: #f401ec;
-    white-space: nowrap;
-    width: 100vw; 
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 1em; 
-     float: none; 
-     clear: both; 
-    position: relative; 
-    
+footer a {
+    display: block;
+    text-align: center; 
+    width: auto; 
+    margin: 0 auto; 
+    padding: 10px 0; 
+    position: static; 
+    white-space: normal; 
+    color:#fb00ff;
+}
+
+@media (min-width: 768px) {
+    footer a {
+        width: auto; 
+        text-align: center;
+    }
 }
