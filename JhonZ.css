@@ -30,19 +30,74 @@ header p {
 }
 
 .container {
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    box-sizing: border-box;
-    
+    width: 100%;
+    max-width: 600px; /* Limita el ancho en pantallas grandes */
 }
 
 .calculator {
-    background-color: #d3d3d3;
+    width: 100%;
     padding: 20px;
+    background-color: #bebebe;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+        padding: 30px;
+    }
+    .calculator {
+        padding: 30px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .calculator {
+        padding: 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .calculator {
+        width: 100%;
+        padding: 15px;
+    }
+    .input-group {
+        flex-direction: column; /* Para que los inputs y selects estén en columnas */
+        align-items: flex-start;
+    }
+    input[type="number"],
+    select {
+        width: 100%; /* Para que ocupen todo el ancho disponible */
+        margin-bottom: 10px;
+    }
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .taskbar {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
 
 .input-group {
     margin-bottom: 15px;
@@ -154,7 +209,7 @@ body.dark-mode .calculator button {
     background-color: #555;
     color: #ddd;
     border: 1px solid #000000;
-    border 
+    
 }
 
 body.dark-mode .calculator button:hover {
@@ -239,11 +294,11 @@ body.dark-mode .calculator button:active {
 
 .modal-content {
     background-color: white;
-    margin: 15% auto;
+    margin:  auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -492,6 +547,7 @@ body.dark-mode .calculator button:active {
 .hamburger-icon {
     font-size: 24px;
     cursor: pointer;
+    padding: 5px;
 }
 
 .john-software-text {
@@ -554,20 +610,21 @@ body.dark-mode .calculator button:active {
     font-size: 16px;
 }
 
-footer a {
-    display: block;
-    text-align: center; 
-    width: auto; 
-    margin: 0 auto; 
-    padding: 10px 0; 
-    position: static; 
-    white-space: normal; 
-    color:#fb00ff;
+
+
+
+footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    width: 100%;
 }
 
-@media (min-width: 768px) {
-    footer a {
-        width: auto; 
-        text-align: center;
-    }
+footer a {
+    display: inline-block;
+    width: auto;
+    padding: 10px 0;
+    text-align: center;
+    color: rgb(255, 0, 247)
 }
+
