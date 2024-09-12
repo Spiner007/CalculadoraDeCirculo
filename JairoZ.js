@@ -223,6 +223,7 @@ document.getElementById('hamburger').addEventListener('click', function() {
     taskbarVisible = !taskbarVisible; 
 });
 
+
 document.getElementById('closeTaskbar').addEventListener('click', function() {
     const taskbar = document.getElementById('taskbar');
     taskbar.style.transform = 'translateX(-100%)'; 
@@ -234,6 +235,10 @@ document.getElementById('closeTaskbar').addEventListener('click', function() {
 document.getElementById('darkModeSwitch').addEventListener('change', function() {
     document.body.classList.toggle('dark-mode', this.checked);
 });
+
+
+
+
 
 
 //localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 

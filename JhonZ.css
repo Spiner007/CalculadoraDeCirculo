@@ -40,7 +40,11 @@ header p {
 }
 
 .calculator {
+<<<<<<< HEAD
+    background-color: #e0dddd;
+=======
     width: 100%;
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
     padding: 20px;
     background-color: #bebebe;
     border-radius: 8px;
@@ -109,24 +113,39 @@ header p {
 label {
     display: block;
     margin-bottom: 5px;
+<<<<<<< HEAD
+    font-family: Georgia, 'Times New Roman', Times, serif;
+=======
    
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 }
 
 input[type="number"] {
     width: calc(100% - 120px);
     padding: 8px;
     margin-right: 10px;
+<<<<<<< HEAD
+    border-color: #000000;
+=======
     color: #000000;
     border-color: #f3eded;
     
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 }
 
 
 select {
     padding: 8px;
+<<<<<<< HEAD
+    color: #000000;
+    border-color:  #000000;
+background-color: #d2c7c7;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+=======
     background-color: #c9c5c5;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-color: #000000;
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 }
 
 button {
@@ -138,6 +157,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
 
 
 
@@ -205,6 +225,21 @@ body.dark-mode .calculator input {
 
 
 
+<<<<<<< HEAD
+body.dark-mode .calculator input {
+    background-color:#d6d6d6;
+    border-color: #000000;
+    color: #000000;
+}
+
+body.dark-mode .calculator select {
+    color: #f8f9fa;
+    background-color: #7d7575;
+    border-color: #000000;
+}
+
+=======
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 body.dark-mode .calculator button {
     background-color: #555;
     color: #ddd;
@@ -250,7 +285,7 @@ body.dark-mode .calculator label {
 
 
 body.dark-mode .calculator button[type="button"] {
-    background-color: #037bfcf1; 
+    background-color: #037bfc; 
     color: #ddd;
 }
 
@@ -491,6 +526,25 @@ body.dark-mode .john-software-button:active {
 
 
 
+<<<<<<< HEAD
+#jhon{
+    color: #f401ec;
+    white-space: nowrap;
+    text-align: center;
+}
+
+  @media screen and (max-width: 768px) {
+  footer {
+    font-size: 14px; 
+    padding: 1em;
+  }
+}
+
+      
+    
+
+=======
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 .calculator button[type="button"] {
     background-color: #007bff; 
     color: #fff; 
@@ -498,7 +552,11 @@ body.dark-mode .john-software-button:active {
 
 .calculator button[type="reset"] {
     background-color: #ff0000;  
+<<<<<<< HEAD
+    color: #fff;
+=======
     color: #fff; 
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 }
 
 
@@ -559,9 +617,15 @@ body.dark-mode .calculator button:active {
 .taskbar {
     display: fixed; 
     position: absolute;
+<<<<<<< HEAD
+    top: 270px; 
+    left: 0;
+    width: auto;
+=======
     width: 260px;
     top: 270px; 
     left: 0;
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
     background-color: #373333;
     color: white;
     justify-content: space-between;
@@ -571,6 +635,9 @@ body.dark-mode .calculator button:active {
     z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    justify-content: space-between;
+     
     
 }
 
@@ -596,6 +663,21 @@ body.dark-mode .calculator button:active {
     
     
 
+<<<<<<< HEAD
+.taskbar-button {
+    margin-left: 20px; 
+    margin-right: 15px; 
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+=======
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
+
 
 .dark-mode-toggle {
     display: flex;
@@ -610,6 +692,8 @@ body.dark-mode .calculator button:active {
     font-size: 16px;
 }
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -620,11 +704,17 @@ footer {
     width: 100%;
 }
 
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
 footer a {
     display: inline-block;
     width: auto;
     padding: 10px 0;
     text-align: center;
+<<<<<<< HEAD
+    color: #f401ec;
+}
+=======
     color: rgb(255, 0, 247)
 }
 
+>>>>>>> 5a6467444cfb20518cf06a369b317fff06383928
