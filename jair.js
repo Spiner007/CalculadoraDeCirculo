@@ -253,5 +253,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+ 
 
 //localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 

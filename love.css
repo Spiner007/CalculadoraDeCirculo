@@ -216,14 +216,14 @@ body.dark-mode .calculator button[type="reset"] {
 .taskbar {
 
     position:absolute;
-    width: 250px;
+    width: 150px;
     top: 325px; 
     left: 0;
     background-color: #373333;
     color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0px 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transform: translateX(-100%);
@@ -236,26 +236,28 @@ body.dark-mode .calculator button[type="reset"] {
     align-items: center;
 }
 
-.taskbar-button {
-    margin-left: 30px; 
+.taskbar-p {
+    margin-left: 0px; 
     margin-right: 15px; 
-    background-color: #f44336;
     color: white;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
+    margin-top: -10px;
 }
 
 
 .dark-mode-toggle {
     display: flex;
     align-items: center;
+    margin-top: 5px;
 }
 
 .dark-mode-toggle input[type="checkbox"] {
     margin-right: 10px;
+    margin-top: 0px;
 }
 
 .dark-mode-toggle label {
@@ -359,8 +361,61 @@ footer a {
     #results {
         margin-top: 10px;
     }
-}
 
+    
+
+    .taskbar {
+
+        position:absolute;
+        width: 150px;
+        top: 325px; 
+        left: 0;
+        background-color: #373333;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .taskbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .taskbar-p {
+        margin-left: 0px; 
+        margin-right: 15px; 
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 20px;
+        margin-top: -10px;
+    }
+    
+    
+    .dark-mode-toggle {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+    
+    .dark-mode-toggle input[type="checkbox"] {
+        margin-right: 10px;
+        margin-top: 0px;
+    }
+    
+    .dark-mode-toggle label {
+        font-size: 16px;
+    }
+
+}
 
 input[type="number"], select {
     width: 100%;
