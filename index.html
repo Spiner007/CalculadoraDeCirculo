@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Círculo</title>
     <meta name="description" content="Calculadora en línea para calcular el radio, diámetro, circunferencia y área de un círculo. Simple y fácil de usar con diferentes unidades de medida.">
-    <link rel="stylesheet" href="love.css?v=1.0.8">
+    <link rel="stylesheet" href="love.css?v=1.0.9">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -31,21 +31,23 @@
         </div>
     </div>
 
-    <div id="eulaModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="eulaTitle" tabindex="-1">
+    <div id="eulaModal" class="modal" role="dialog" aria-labelledby="eulaTitle" aria-describedby="eulaDescription" aria-modal="true">
         <div class="modal-content">
             <h2 id="eulaTitle">Acuerdo de licencia de usuario final (EULA)</h2>
-            <p>Al utilizar este software, aceptas los términos establecidos en el <a href="LICENCIA.txt" target="_blank">EULA</a>.</p>
+            <p id="eulaDescription">Al utilizar este software, aceptas los términos establecidos en el <a href="LICENCIA.txt" target="_blank">EULA</a>.</p>
             <div class="modal-buttons">
-                <button class="accept-btn" id="acceptEula" tabindex="0" aria-label="Aceptar EULA">Acepto</button>
-                <button class="decline-btn" id="declineEula" tabindex="0" aria-label="No aceptar EULA">No acepto</button>
+                <button class="accept-btn" id="acceptEula">Acepto</button>
+                <button class="decline-btn" id="declineEula">No acepto</button>
             </div>
         </div>
     </div>
-
-    <header role="heading">
+    
+    
+    <header>
         <h1>Calculadora de Círculo</h1>
         <p>Utiliza esta calculadora para calcular el radio, diámetro, circunferencia y área de un círculo basado en diferentes unidades. Solo ingresa un valor y obtén los resultados automáticamente.</p>
     </header>
+    
     
     <main>
         <div class="container">
@@ -117,10 +119,13 @@
                         <option value="nmi²">Millas Náuticas cuadradas</option>
                     </select>
                 </div>
-
-                <button type="button" tabindex="0" aria-label="Calcular los valores del círculo">Calcular</button>
-                <button type="reset" tabindex="0" aria-label="Reiniciar el formulario">Reiniciar</button>
-
+                
+                
+                <button class="accept-btn" id="acceptEula" tabindex="0">Acepto</button>
+                <button type="button" tabindex="0">Calcular</button>
+                <button type="reset" tabindex="0">Reiniciar</button>
+                
+             
                 <div id="results" role="region" aria-live="polite">
                     <p id="radius-result">Radio: </p>
                     <p id="diameter-result">Diámetro: </p>

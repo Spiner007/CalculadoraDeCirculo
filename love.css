@@ -72,7 +72,7 @@ select {
 }
 
 button {
-    background-color: #c30000; 
+    background-color: #b00000; 
     color: #ffffff; 
     border: none;
     padding: 10px 20px;
@@ -81,7 +81,7 @@ button {
 }
 
 button:hover {
-    background-color: #a00000; 
+    background-color: #900000; 
 }
 
 button:focus {
