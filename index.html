@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Círculo</title>
     <meta name="Descripcion" content="Calculadora para calcular el radio, diámetro, circunferencia y área de un círculo.">
-    <link rel="stylesheet" href="love.css?v=1.0.3">
+    <link rel="stylesheet" href="love.css?v=1.0.4">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -52,11 +52,14 @@
         <p>Utiliza esta calculadora para calcular el radio, diámetro, circunferencia y área de un círculo basado en diferentes unidades. Solo ingresa un valor y obtén los resultados automáticamente.</p>
     </header>
 
+   
+   
     <div class="container">
         <div class="calculator">
             <div class="input-group">
                 <label for="radio-value">Radio:</label>
                 <input type="number" id="radio-value" placeholder="valor">
+                <label for="radio-unit">Unidad Radio:</label>
                 <select id="radio-unit">
                     <option value="m">Metros</option>
                     <option value="cm">Centímetros</option>
@@ -69,10 +72,11 @@
                     <option value="nmi">Millas Náuticas</option>
                 </select>
             </div>
-
+            
             <div class="input-group">
                 <label for="diameter-value">Diámetro:</label>
                 <input type="number" id="diameter-value" placeholder="Valor">
+                <label for="diameter-unit">Unidad Diámetro:</label>
                 <select id="diameter-unit">
                     <option value="m">Metros</option>
                     <option value="cm">Centímetros</option>
@@ -85,10 +89,11 @@
                     <option value="nmi">Millas Náuticas</option>
                 </select>
             </div>
-
+            
             <div class="input-group">
                 <label for="circumference-value">Circunferencia:</label>
                 <input type="number" id="circumference-value" placeholder="Valor">
+                <label for="circumference-unit">Unidad Circunferencia:</label>
                 <select id="circumference-unit">
                     <option value="m">Metros</option>
                     <option value="cm">Centímetros</option>
@@ -101,10 +106,11 @@
                     <option value="nmi">Millas Náuticas</option>
                 </select>
             </div>
-
+            
             <div class="input-group">
                 <label for="area-value">Área:</label>
                 <input type="number" id="area-value" placeholder="Valor">
+                <label for="area-unit">Unidad Área:</label>
                 <select id="area-unit">
                     <option value="m²">Metros cuadrados</option>
                     <option value="cm²">Centímetros cuadrados</option>
@@ -117,6 +123,7 @@
                     <option value="nmi²">Millas Náuticas cuadradas</option>
                 </select>
             </div>
+            
 
             <button type="button">Calcular</button>
             <button type="reset">Reiniciar</button>
@@ -136,7 +143,7 @@
 
    
    
-<script src="jair.js?v=1.0.3"></script>
+<script src="jair.js?v=1.0.4"></script>
 
 </body>
 </html>
