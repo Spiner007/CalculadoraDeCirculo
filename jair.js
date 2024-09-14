@@ -153,24 +153,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskbar = document.getElementById('taskbar');
     const darkModeSwitch = document.getElementById('darkModeSwitch');
 
-    if (hamburger && taskbar) {
-        hamburger.addEventListener('click', function() {
-            if (taskbarVisible) {
-                taskbar.style.transform = 'translateX(-100%)'; 
-                setTimeout(() => {
-                    taskbar.style.display = 'none'; 
-                }, 300); 
-            } else {
-                taskbar.style.display = 'flex'; 
-                setTimeout(() => {
-                   
-                    taskbar.style.transform = 'translateX(0)'; 
-                    document.querySelector('.taskbar-content input').focus(); 
-                }, 10); 
-            }
-            taskbarVisible = !taskbarVisible; 
-        });
+    let taskbarVisible = false;
+
+
+hamburger.addEventListener('click', function() {
+    if (taskbarVisible) {
+        taskbar.style.transform = 'translateX(-100%)'; 
+        setTimeout(() => {
+            taskbar.style.display = 'none'; 
+            taskbar.inert = true; 
+        }, 300); 
+    } else {
+        taskbar.style.display = 'flex'; 
+        setTimeout(() => {
+            taskbar.style.transform = 'translateX(0)';
+            taskbar.inert = false; 
+        }, 10);
     }
+    taskbarVisible = !taskbarVisible; 
+});
+
+
+
+
 
     if (closeTaskbar) {
         closeTaskbar.addEventListener('click', function() {

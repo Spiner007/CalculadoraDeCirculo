@@ -329,51 +329,71 @@ body.dark-mode .calculator button[type="reset"] {
 footer a {
     color: #d03df5; 
     text-decoration: none;
+    position:static;
+    text-align: center;
 }
 
 footer a:hover {
     color: #b200d8;
 }
 
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 650px; 
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.calculator {
+    width: 100%;
+    background-color: #ffffffb7;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+
 @media (max-width: 630px) {
     .container {
-        padding: 10px;
-        width: 100%;
+        padding: 10px; 
+        height: auto; 
+        width: 100vw;
+        max-width: none; 
     }
-
     .calculator {
-        padding: 15px;
-        border-radius: 4px;
+        width: 100%; 
+        max-width: none; 
+        padding: 15px; 
     }
 
     .input-group {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        flex-direction: column; 
+        align-items: stretch; 
     }
 
-    input[type="number"] {
-        width: 100%;
-        margin-bottom: 10px;
+    label, input[type="number"], select, button {
+        width: 100%; 
+        box-sizing: border-box;
     }
 
-    select {
-        width: 100%;
-        margin-bottom: 10px;
+    input[type="number"], select {
+        margin-right: 0; 
+        padding: 10px; 
     }
 
     button {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        font-size: 16px;
-    }
-
-    #results {
-        margin-top: 10px;
+        margin-top: 10px; 
+        padding: 12px; 
+        box-sizing: border-box; 
     }
 }
 
-input[type="number"], select {
-    width: 100%;
-    box-sizing: border-box; 
-}

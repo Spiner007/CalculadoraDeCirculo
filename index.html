@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Círculo</title>
     <meta name="description" content="Calculadora en línea para calcular el radio, diámetro, circunferencia y área de un círculo. Simple y fácil de usar con diferentes unidades de medida.">
-    <link rel="stylesheet" href="love.css?v=1.1.1">
+    <link rel="stylesheet" href="love.css?v=1.1.5">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -21,15 +21,16 @@
         <div class="john-software-text">JOHN-SOFTWARE.</div>
     </div>
 
-    <div id="taskbar" class="taskbar" aria-hidden="true" tabindex="-1">
-        <div class="taskbar-content">
-            <div class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeSwitch" aria-checked="false">
-                <label for="darkModeSwitch">Modo Oscuro</label>
-            </div>
-            <p id="closeTaskbar" class="taskbar-p" tabindex="0" role="button" aria-label="Cerrar menú">x</p>
+<div id="taskbar" class="taskbar" tabindex="-1" inert>
+    <div class="taskbar-content">
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeSwitch" aria-checked="false">
+            <label for="darkModeSwitch">Modo Oscuro</label>
         </div>
+        <p id="closeTaskbar" class="taskbar-p" tabindex="0" role="button" aria-label="Cerrar menú">x</p>
     </div>
+</div>
+
 
     <div id="eulaModal" class="modal" role="dialog" aria-labelledby="eulaTitle" aria-describedby="eulaDescription" aria-modal="true">
         <div class="modal-content">
@@ -140,6 +141,6 @@
         <a href="LICENCIA.txt" target="_blank" rel="noopener noreferrer">© 2024 Calculadora.</a>
     </footer>
 
-    <script src="jair.js?v=1.0.5"></script>
+    <script src="jair.js?v=1.1.5"></script>
 </body>
 </html>
