@@ -174,9 +174,22 @@ window.onload = function() {
     };
 };
 
+
+
+
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
+
+function redirectToPage(url) {
+    const allowedPaths = ['/pagina_error.html', '/LICENCIA.txt']; 
+    const urlObj = new URL(url, window.location.origin);
+    if (allowedPaths.includes(urlObj.pathname)) {
+        window.location.href = url;
+    } else {
+        alert('URL no permitida.');
+    }
+}
 
 
 function isValidNumber(value) {
