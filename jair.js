@@ -129,9 +129,15 @@ function resetForm() {
     document.getElementById('results').classList.remove('show');
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.unit-select').forEach(select => {
-        select.addEventListener('change', updateResults);
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); 
+                updateResults(); 
+            }
+        });
     });
 
     document.querySelector('button[type="button"]').addEventListener('click', updateResults);
