@@ -238,4 +238,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+document.getElementById('themeSwitch').addEventListener('change', function() {
+    const theme = this.checked ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    applyTheme();
+});
+
+
+function applyTheme() {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}
+
+
+window.addEventListener('load', applyTheme);
+
+
+
+
 //localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 
