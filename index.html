@@ -6,143 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Círculo</title>
     <meta name="description" content="Calculadora en línea para calcular el radio, diámetro, circunferencia y área de un círculo. Simple y fácil de usar con diferentes unidades de medida.">
-    <link rel="stylesheet" href="love.css?v=1.0.7">
+    <link rel="stylesheet" href="love.css?v=1.0.8">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+</head>
 
 <body>
     
-    
-    
-    <div id="header" class="header">
-        <div id="hamburger" class="hamburger-icon">&#9776;</div> 
+    <div id="header" class="header" role="banner">
+        <div id="hamburger" class="hamburger-icon" tabindex="0" role="button" aria-label="Abrir menú">&#9776;</div> 
         <div class="john-software-text">JOHN-SOFTWARE.</div>
     </div>
-    <div id="taskbar" class="taskbar">
+
+    <div id="taskbar" class="taskbar" aria-hidden="true" tabindex="-1">
         <div class="taskbar-content">
             <div class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeSwitch">
+                <input type="checkbox" id="darkModeSwitch" aria-checked="false">
                 <label for="darkModeSwitch">Modo Oscuro</label>
             </div>
-            <p id="closeTaskbar" class="taskbar-p">x</p>
-    
-            </div>
+            <p id="closeTaskbar" class="taskbar-p" tabindex="0" role="button" aria-label="Cerrar menú">x</p>
         </div>
     </div>
 
-    
-   
-    <div id="eulaModal" class="modal">
+    <div id="eulaModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="eulaTitle" tabindex="-1">
         <div class="modal-content">
-            <h2>Acuerdo de licencia de usuario final (EULA)</h2>
+            <h2 id="eulaTitle">Acuerdo de licencia de usuario final (EULA)</h2>
             <p>Al utilizar este software, aceptas los términos establecidos en el <a href="LICENCIA.txt" target="_blank">EULA</a>.</p>
             <div class="modal-buttons">
-                <button class="accept-btn" id="acceptEula">Acepto</button>
-                <button class="decline-btn" id="declineEula">No acepto</button>
+                <button class="accept-btn" id="acceptEula" tabindex="0" aria-label="Aceptar EULA">Acepto</button>
+                <button class="decline-btn" id="declineEula" tabindex="0" aria-label="No aceptar EULA">No acepto</button>
             </div>
         </div>
     </div>
 
-    <header>
+    <header role="heading">
         <h1>Calculadora de Círculo</h1>
         <p>Utiliza esta calculadora para calcular el radio, diámetro, circunferencia y área de un círculo basado en diferentes unidades. Solo ingresa un valor y obtén los resultados automáticamente.</p>
     </header>
+    
+    <main>
+        <div class="container">
+            <div class="calculator" role="form">
+                <div class="input-group">
+                    <label for="radio-value">Radio:</label>
+                    <input type="number" id="radio-value" placeholder="valor" aria-labelledby="radio-unit">
+                    <label for="radio-unit">Unidad Radio:</label>
+                    <select id="radio-unit" aria-label="Seleccione la unidad del radio">
+                        <option value="m">Metros</option>
+                        <option value="cm">Centímetros</option>
+                        <option value="mm">Milímetros</option>
+                        <option value="in">Pulgadas</option>
+                        <option value="ft">Pies</option>
+                        <option value="yd">Yardas</option>
+                        <option value="km">Kilómetros</option>
+                        <option value="mi">Millas</option>
+                        <option value="nmi">Millas Náuticas</option>
+                    </select>
+                </div>
 
-   
-   
-    <div class="container">
-        <div class="calculator">
-            <div class="input-group">
-                <label for="radio-value">Radio:</label>
-                <input type="number" id="radio-value" placeholder="valor">
-                <label for="radio-unit">Unidad Radio:</label>
-                <select id="radio-unit">
-                    <option value="m">Metros</option>
-                    <option value="cm">Centímetros</option>
-                    <option value="mm">Milímetros</option>
-                    <option value="in">Pulgadas</option>
-                    <option value="ft">Pies</option>
-                    <option value="yd">Yardas</option>
-                    <option value="km">Kilómetros</option>
-                    <option value="mi">Millas</option>
-                    <option value="nmi">Millas Náuticas</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label for="diameter-value">Diámetro:</label>
-                <input type="number" id="diameter-value" placeholder="Valor">
-                <label for="diameter-unit">Unidad Diámetro:</label>
-                <select id="diameter-unit">
-                    <option value="m">Metros</option>
-                    <option value="cm">Centímetros</option>
-                    <option value="mm">Milímetros</option>
-                    <option value="in">Pulgadas</option>
-                    <option value="ft">Pies</option>
-                    <option value="yd">Yardas</option>
-                    <option value="km">Kilómetros</option>
-                    <option value="mi">Millas</option>
-                    <option value="nmi">Millas Náuticas</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label for="circumference-value">Circunferencia:</label>
-                <input type="number" id="circumference-value" placeholder="Valor">
-                <label for="circumference-unit">Unidad Circunferencia:</label>
-                <select id="circumference-unit">
-                    <option value="m">Metros</option>
-                    <option value="cm">Centímetros</option>
-                    <option value="mm">Milímetros</option>
-                    <option value="in">Pulgadas</option>
-                    <option value="ft">Pies</option>
-                    <option value="yd">Yardas</option>
-                    <option value="km">Kilómetros</option>
-                    <option value="mi">Millas</option>
-                    <option value="nmi">Millas Náuticas</option>
-                </select>
-            </div>
-            
-            <div class="input-group">
-                <label for="area-value">Área:</label>
-                <input type="number" id="area-value" placeholder="Valor">
-                <label for="area-unit">Unidad Área:</label>
-                <select id="area-unit">
-                    <option value="m²">Metros cuadrados</option>
-                    <option value="cm²">Centímetros cuadrados</option>
-                    <option value="mm²">Milímetros cuadrados</option>
-                    <option value="in²">Pulgadas cuadradas</option>
-                    <option value="ft²">Pies cuadrados</option>
-                    <option value="yd²">Yardas cuadradas</option>
-                    <option value="km²">Kilómetros cuadrados</option>
-                    <option value="mi²">Millas cuadradas</option>
-                    <option value="nmi²">Millas Náuticas cuadradas</option>
-                </select>
-            </div>
-            
+                <div class="input-group">
+                    <label for="diameter-value">Diámetro:</label>
+                    <input type="number" id="diameter-value" placeholder="Valor" aria-labelledby="diameter-unit">
+                    <label for="diameter-unit">Unidad Diámetro:</label>
+                    <select id="diameter-unit" aria-label="Seleccione la unidad del diámetro">
+                        <option value="m">Metros</option>
+                        <option value="cm">Centímetros</option>
+                        <option value="mm">Milímetros</option>
+                        <option value="in">Pulgadas</option>
+                        <option value="ft">Pies</option>
+                        <option value="yd">Yardas</option>
+                        <option value="km">Kilómetros</option>
+                        <option value="mi">Millas</option>
+                        <option value="nmi">Millas Náuticas</option>
+                    </select>
+                </div>
 
-            <button type="button">Calcular</button>
-            <button type="reset">Reiniciar</button>
+                <div class="input-group">
+                    <label for="circumference-value">Circunferencia:</label>
+                    <input type="number" id="circumference-value" placeholder="Valor" aria-labelledby="circumference-unit">
+                    <label for="circumference-unit">Unidad Circunferencia:</label>
+                    <select id="circumference-unit" aria-label="Seleccione la unidad de la circunferencia">
+                        <option value="m">Metros</option>
+                        <option value="cm">Centímetros</option>
+                        <option value="mm">Milímetros</option>
+                        <option value="in">Pulgadas</option>
+                        <option value="ft">Pies</option>
+                        <option value="yd">Yardas</option>
+                        <option value="km">Kilómetros</option>
+                        <option value="mi">Millas</option>
+                        <option value="nmi">Millas Náuticas</option>
+                    </select>
+                </div>
 
-            <div id="results">
-                <p id="radius-result">Radio: </p>
-                <p id="diameter-result">Diámetro: </p>
-                <p id="circumference-result">Circunferencia: </p>
-                <p id="area-result">Área: </p>
+                <div class="input-group">
+                    <label for="area-value">Área:</label>
+                    <input type="number" id="area-value" placeholder="Valor" aria-labelledby="area-unit">
+                    <label for="area-unit">Unidad Área:</label>
+                    <select id="area-unit" aria-label="Seleccione la unidad del área">
+                        <option value="m²">Metros cuadrados</option>
+                        <option value="cm²">Centímetros cuadrados</option>
+                        <option value="mm²">Milímetros cuadrados</option>
+                        <option value="in²">Pulgadas cuadradas</option>
+                        <option value="ft²">Pies cuadrados</option>
+                        <option value="yd²">Yardas cuadradas</option>
+                        <option value="km²">Kilómetros cuadrados</option>
+                        <option value="mi²">Millas cuadradas</option>
+                        <option value="nmi²">Millas Náuticas cuadradas</option>
+                    </select>
+                </div>
+
+                <button type="button" tabindex="0" aria-label="Calcular los valores del círculo">Calcular</button>
+                <button type="reset" tabindex="0" aria-label="Reiniciar el formulario">Reiniciar</button>
+
+                <div id="results" role="region" aria-live="polite">
+                    <p id="radius-result">Radio: </p>
+                    <p id="diameter-result">Diámetro: </p>
+                    <p id="circumference-result">Circunferencia: </p>
+                    <p id="area-result">Área: </p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
         <a href="LICENCIA.txt" target="_blank" rel="noopener noreferrer">© 2024 Calculadora.</a>
     </footer>
 
-   
-   
-<script src="jair.js?v=1.0.4"></script>
-
+    <script src="jair.js?v=1.0.5"></script>
 </body>
 </html>

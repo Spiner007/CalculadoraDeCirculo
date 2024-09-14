@@ -1,6 +1,4 @@
-
 let taskbarVisible = false;
-
 
 function convertToBase(value, unit, isArea) {
     const conversionRates = {
@@ -53,7 +51,6 @@ function convertFromBase(value, unit, isArea) {
 function roundToTwoDecimals(value) {
     return Math.round(value * 100) / 100;
 }
-
 
 function updateResults() {
     const radioValue = parseFloat(document.getElementById('radio-value').value) || 0;
@@ -113,7 +110,6 @@ function updateResults() {
     document.getElementById('results').classList.add('show');
 }
 
-
 function resetForm() {
     document.getElementById('radio-value').value = '';
     document.getElementById('diameter-value').value = '';
@@ -132,7 +128,6 @@ function resetForm() {
 
     document.getElementById('results').classList.remove('show');
 }
-
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.unit-select').forEach(select => {
@@ -168,7 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 taskbar.style.display = 'flex'; 
                 setTimeout(() => {
+                   
                     taskbar.style.transform = 'translateX(0)'; 
+                    document.querySelector('.taskbar-content input').focus(); 
                 }, 10); 
             }
             taskbarVisible = !taskbarVisible; 
@@ -180,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             taskbar.style.transform = 'translateX(-100%)'; 
             setTimeout(() => {
                 taskbar.style.display = 'none'; 
+                hamburger.focus(); 
             }, 300); 
         });
     }
@@ -187,22 +185,24 @@ document.addEventListener('DOMContentLoaded', function() {
     if (darkModeSwitch) {
         darkModeSwitch.addEventListener('change', function() {
             document.body.classList.toggle('dark-mode', this.checked);
+            localStorage.setItem('darkMode', this.checked);
         });
     }
 
-    
     var modal = document.getElementById("eulaModal");
     var acceptBtn = document.getElementById("acceptEula");
     var declineBtn = document.getElementById("declineEula");
 
     if (modal && !localStorage.getItem("eulaAccepted")) {
         modal.style.display = "block";
+        acceptBtn.focus(); 
     }
 
     if (acceptBtn) {
         acceptBtn.onclick = function() {
             localStorage.setItem("eulaAccepted", "true");
             modal.style.display = "none";
+            document.querySelector('h1').focus(); 
         };
     }
 
@@ -211,48 +211,39 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = "pagina_error.html";
         };
     }
+
+    
+    applyDarkMode();
+    handleDarkModeSwitch();
 });
 
+function applyDarkMode() {
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+    const body = document.body;
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
 
+    if (darkModeEnabled) {
+        body.classList.add('dark-mode');
+        darkModeSwitch.checked = true;
+    } else {
+        body.classList.remove('dark-mode');
+        darkModeSwitch.checked = false;
+    }
+}
 
-    
-    function applyDarkMode() {
-        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+function handleDarkModeSwitch() {
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+    darkModeSwitch.addEventListener('change', function () {
         const body = document.body;
-        const darkModeSwitch = document.getElementById('darkModeSwitch');
-
-        if (darkModeEnabled) {
+        if (this.checked) {
             body.classList.add('dark-mode');
-            darkModeSwitch.checked = true;
+            localStorage.setItem('darkMode', 'true');
         } else {
             body.classList.remove('dark-mode');
-            darkModeSwitch.checked = false;
+            localStorage.setItem('darkMode', 'false'); 
         }
-    }
-
-    
-    function handleDarkModeSwitch() {
-        const darkModeSwitch = document.getElementById('darkModeSwitch');
-
-        darkModeSwitch.addEventListener('change', function () {
-            const body = document.body;
-            if (this.checked) {
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'true');
-            } else {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'false'); 
-            }
-        });
-    }
-
- 
-    document.addEventListener('DOMContentLoaded', function () {
-        applyDarkMode();  
-        handleDarkModeSwitch();  
     });
+}
 
-
- 
-
-//localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 
+// localStorage.removeItem("eulaAccepted"); // Comando para restablecer los términos y condiciones
