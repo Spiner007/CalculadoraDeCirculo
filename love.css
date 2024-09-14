@@ -7,7 +7,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    body.loaded { display: block;}
+    body.loaded { display: block; }
+
 }
 
 header {
@@ -118,7 +119,7 @@ button {
     transform: translateY(0);
 }
 
-/* Dark mode styles */
+
 body.dark-mode {
     background-color: #0a0909;
     color: #ddd;
@@ -182,7 +183,7 @@ body.dark-mode .calculator button[type="reset"] {
 }
 
 
-/* Header and taskbar */
+
 .header {
     position: relative;
     top: 0;
@@ -236,8 +237,8 @@ body.dark-mode .calculator button[type="reset"] {
 }
 
 .taskbar-button {
-    margin-left: 30px; /* Empuja el botón hacia la derecha */
-    margin-right: 15px; /* Ajusta el espacio a la derecha del botón */
+    margin-left: 30px; 
+    margin-right: 15px; 
     background-color: #f44336;
     color: white;
     border: none;
@@ -261,7 +262,7 @@ body.dark-mode .calculator button[type="reset"] {
     font-size: 16px;
 }
 
-/* Modal */
+
 .modal {
     display: none; 
     position: fixed;

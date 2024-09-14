@@ -46,13 +46,11 @@ function convertFromBase(value, unit, isArea) {
     return value / conversionRates[unit];
 }
 
-
 function roundToTwoDecimals(value) {
     return Math.round(value * 100) / 100;
 }
 
 function updateResults() {
-  
     const radioValue = parseFloat(document.getElementById('radio-value').value) || 0;
     const radioUnit = document.getElementById('radio-unit').value;
 
@@ -66,89 +64,95 @@ function updateResults() {
     const areaUnit = document.getElementById('area-unit').value;
 
     let radiusInMeters = 0;
+    let valuesEntered = 0;
 
-  
     if (!isNaN(radioValue) && radioValue > 0) {
         radiusInMeters = convertToBase(radioValue, radioUnit, false);
-    } else if (!isNaN(diameterValue) && diameterValue > 0) {
+        valuesEntered++;
+    }
+
+    if (!isNaN(diameterValue) && diameterValue > 0) {
         radiusInMeters = convertToBase(diameterValue / 2, diameterUnit, false);
-    } else if (!isNaN(circumferenceValue) && circumferenceValue > 0) {
+        valuesEntered++;
+    }
+
+    if (!isNaN(circumferenceValue) && circumferenceValue > 0) {
         radiusInMeters = convertToBase(circumferenceValue / (2 * Math.PI), circumferenceUnit, false);
-    } else if (!isNaN(areaValue) && areaValue > 0) {
+        valuesEntered++;
+    }
+
+    if (!isNaN(areaValue) && areaValue > 0) {
         radiusInMeters = Math.sqrt(convertToBase(areaValue, areaUnit, true) / Math.PI);
-    } else {
-        alert('Por favor, ingrese un valor válido para calcular.');
+        valuesEntered++;
+    }
+
+    if (valuesEntered > 1) {
+        alert('Por favor, ingrese solo un valor para calcular.');
+        document.getElementById('radio-value').value = '';
+        document.getElementById('diameter-value').value = '';
+        document.getElementById('circumference-value').value = '';
+        document.getElementById('area-value').value = '';
+        document.getElementById('results').classList.remove('show');
         return;
     }
 
-    
     const diameterInMeters = 2 * radiusInMeters;
     const circumferenceInMeters = 2 * Math.PI * radiusInMeters;
     const areaInMeters = Math.PI * radiusInMeters * radiusInMeters;
 
-   
     const diameterResult = convertFromBase(diameterInMeters, diameterUnit, false);
     const circumferenceResult = convertFromBase(circumferenceInMeters, circumferenceUnit, false);
     const areaResult = convertFromBase(areaInMeters, areaUnit, true);
 
-   
     document.getElementById('radius-result').textContent = `Radio: ${roundToTwoDecimals(convertFromBase(radiusInMeters, radioUnit, false))} ${radioUnit}`;
     document.getElementById('diameter-result').textContent = `Diámetro: ${roundToTwoDecimals(diameterResult)} ${diameterUnit}`;
     document.getElementById('circumference-result').textContent = `Circunferencia: ${roundToTwoDecimals(circumferenceResult)} ${circumferenceUnit}`;
     document.getElementById('area-result').textContent = `Área: ${roundToTwoDecimals(areaResult)} ${areaUnit}`;
 
-  
     document.getElementById('results').classList.add('show');
 }
-
 
 document.querySelectorAll('.unit-select').forEach(select => {
     select.addEventListener('change', updateResults);
 });
 
-
 document.querySelector('button[type="button"]').addEventListener('click', updateResults);
-
-
-function resetForm() {
-    console.log("Reiniciando...");
-
-    document.getElementById('radio-value').value = '';
-    document.getElementById('diameter-value').value = '';
-    document.getElementById('circumference-value').value = '';
-    document.getElementById('area-value').value = '';
-
-  
-    document.getElementById('radio-unit').value = 'm';
-    document.getElementById('diameter-unit').value = 'm';
-    document.getElementById('circumference-unit').value = 'm';
-    document.getElementById('area-unit').value = 'm²';
-
-
-    document.getElementById('radius-result').textContent = 'Radio: ';
-    document.getElementById('diameter-result').textContent = 'Diámetro: ';
-    document.getElementById('circumference-result').textContent = 'Circunferencia: ';
-    document.getElementById('area-result').textContent = 'Área: ';
-
-  
-    document.getElementById('results').classList.remove('show');
-}
-
 
 document.querySelector('button[type="reset"]').addEventListener('click', function(event) {
     event.preventDefault(); 
     resetForm();
 });
 
+function resetForm() {
+    document.getElementById('radio-value').value = '';
+    document.getElementById('diameter-value').value = '';
+    document.getElementById('circumference-value').value = '';
+    document.getElementById('area-value').value = '';
 
+    document.getElementById('radio-unit').value = 'm';
+    document.getElementById('diameter-unit').value = 'm';
+    document.getElementById('circumference-unit').value = 'm';
+    document.getElementById('area-unit').value = 'm²';
+
+    document.getElementById('radius-result').textContent = 'Radio: ';
+    document.getElementById('diameter-result').textContent = 'Diámetro: ';
+    document.getElementById('circumference-result').textContent = 'Circunferencia: ';
+    document.getElementById('area-result').textContent = 'Área: ';
+
+    document.getElementById('results').classList.remove('show');
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        updateResults();
+    }
+});
 
 function toggleDarkMode() {
     var body = document.body;
     var isDarkMode = body.classList.toggle("dark-mode");
-
-
-    document.getElementById("darkModeCheckbox").checked = isDarkMode;
-
+    document.getElementById("darkModeSwitch").checked = isDarkMode;
 }
 
 window.onload = function() {
@@ -156,20 +160,17 @@ window.onload = function() {
     var acceptBtn = document.getElementById("acceptEula");
     var declineBtn = document.getElementById("declineEula");
 
-   
     if (!localStorage.getItem("eulaAccepted")) {
         modal.style.display = "block";
     }
-
 
     acceptBtn.onclick = function() {
         localStorage.setItem("eulaAccepted", "true");
         modal.style.display = "none";
     };
 
-   
     declineBtn.onclick = function() {
-        window.location.href = "pagina_error.html"; 
+        window.location.href = "pagina_error.html";
     };
 };
 
@@ -177,29 +178,9 @@ window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
 
+
 function isValidNumber(value) {
     return !isNaN(parseFloat(value)) && isFinite(value);
-}
-
-
-function redirectToPage(url) {
-    const allowedDomains = ['pagina_error.html'];
-    const urlObj = new URL(url);
-    if (allowedDomains.includes(urlObj.hostname)) {
-        window.location.href = url;
-    } else {
-        alert('URL no permitida.');
-    }
-}
-
-function redirectToPage(url) {
-    const allowedDomains = ['LICENCIA.TXT'];
-    const urlObj = new URL(url);
-    if (allowedDomains.includes(urlObj.hostname)) {
-        window.location.href = url;
-    } else {
-        alert('URL no permitida.');
-    }
 }
 
 
@@ -233,6 +214,12 @@ document.getElementById('closeTaskbar').addEventListener('click', function() {
 document.getElementById('darkModeSwitch').addEventListener('change', function() {
     document.body.classList.toggle('dark-mode', this.checked);
 });
+
+
+
+
+
+
 
 
 //localStorage.removeItem("eulaAccepted"); "en el navegador restura los terminos y condiciones" 
