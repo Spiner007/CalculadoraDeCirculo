@@ -1,7 +1,7 @@
-// Declarar variables globales al inicio
+
 let taskbarVisible = false;
 
-// Función para convertir a la unidad base
+
 function convertToBase(value, unit, isArea) {
     const conversionRates = {
         mm: 0.001,
@@ -26,7 +26,6 @@ function convertToBase(value, unit, isArea) {
     return value * conversionRates[unit];
 }
 
-// Función para convertir desde la unidad base
 function convertFromBase(value, unit, isArea) {
     const conversionRates = {
         mm: 0.001,
@@ -51,12 +50,11 @@ function convertFromBase(value, unit, isArea) {
     return value / conversionRates[unit];
 }
 
-// Función para redondear a dos decimales
 function roundToTwoDecimals(value) {
     return Math.round(value * 100) / 100;
 }
 
-// Función para actualizar los resultados
+
 function updateResults() {
     const radioValue = parseFloat(document.getElementById('radio-value').value) || 0;
     const radioUnit = document.getElementById('radio-unit').value;
@@ -115,7 +113,7 @@ function updateResults() {
     document.getElementById('results').classList.add('show');
 }
 
-// Función para restablecer el formulario
+
 function resetForm() {
     document.getElementById('radio-value').value = '';
     document.getElementById('diameter-value').value = '';
@@ -135,7 +133,7 @@ function resetForm() {
     document.getElementById('results').classList.remove('show');
 }
 
-// Eventos para el DOM
+
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.unit-select').forEach(select => {
         select.addEventListener('change', updateResults);
@@ -192,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Mostrar el modal de EULA al cargar la página
+    
     var modal = document.getElementById("eulaModal");
     var acceptBtn = document.getElementById("acceptEula");
     var declineBtn = document.getElementById("declineEula");
@@ -215,6 +213,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+
+    
+    function applyDarkMode() {
+        const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
+        const body = document.body;
+        const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+        if (darkModeEnabled) {
+            body.classList.add('dark-mode');
+            darkModeSwitch.checked = true;
+        } else {
+            body.classList.remove('dark-mode');
+            darkModeSwitch.checked = false;
+        }
+    }
+
+    
+    function handleDarkModeSwitch() {
+        const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+        darkModeSwitch.addEventListener('change', function () {
+            const body = document.body;
+            if (this.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'true');e
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'false'); 
+            }
+        });
+    }
+
+ 
+    document.addEventListener('DOMContentLoaded', function () {
+        applyDarkMode();  
+        handleDarkModeSwitch();  
+    });
 
 
 
