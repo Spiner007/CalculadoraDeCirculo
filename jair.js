@@ -1,3 +1,7 @@
+// Declarar variables globales al inicio
+let taskbarVisible = false;
+
+// Función para convertir a la unidad base
 function convertToBase(value, unit, isArea) {
     const conversionRates = {
         mm: 0.001,
@@ -22,6 +26,7 @@ function convertToBase(value, unit, isArea) {
     return value * conversionRates[unit];
 }
 
+// Función para convertir desde la unidad base
 function convertFromBase(value, unit, isArea) {
     const conversionRates = {
         mm: 0.001,
@@ -46,10 +51,12 @@ function convertFromBase(value, unit, isArea) {
     return value / conversionRates[unit];
 }
 
+// Función para redondear a dos decimales
 function roundToTwoDecimals(value) {
     return Math.round(value * 100) / 100;
 }
 
+// Función para actualizar los resultados
 function updateResults() {
     const radioValue = parseFloat(document.getElementById('radio-value').value) || 0;
     const radioUnit = document.getElementById('radio-unit').value;
@@ -88,11 +95,7 @@ function updateResults() {
 
     if (valuesEntered > 1) {
         alert('Por favor, ingrese solo un valor para calcular.');
-        document.getElementById('radio-value').value = '';
-        document.getElementById('diameter-value').value = '';
-        document.getElementById('circumference-value').value = '';
-        document.getElementById('area-value').value = '';
-        document.getElementById('results').classList.remove('show');
+        resetForm();
         return;
     }
 
@@ -112,17 +115,7 @@ function updateResults() {
     document.getElementById('results').classList.add('show');
 }
 
-document.querySelectorAll('.unit-select').forEach(select => {
-    select.addEventListener('change', updateResults);
-});
-
-document.querySelector('button[type="button"]').addEventListener('click', updateResults);
-
-document.querySelector('button[type="reset"]').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    resetForm();
-});
-
+// Función para restablecer el formulario
 function resetForm() {
     document.getElementById('radio-value').value = '';
     document.getElementById('diameter-value').value = '';
@@ -142,120 +135,85 @@ function resetForm() {
     document.getElementById('results').classList.remove('show');
 }
 
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        updateResults();
+// Eventos para el DOM
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.unit-select').forEach(select => {
+        select.addEventListener('change', updateResults);
+    });
+
+    document.querySelector('button[type="button"]').addEventListener('click', updateResults);
+
+    document.querySelector('button[type="reset"]').addEventListener('click', function(event) {
+        event.preventDefault(); 
+        resetForm();
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            updateResults();
+        }
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const closeTaskbar = document.getElementById('closeTaskbar');
+    const taskbar = document.getElementById('taskbar');
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+
+    if (hamburger && taskbar) {
+        hamburger.addEventListener('click', function() {
+            if (taskbarVisible) {
+                taskbar.style.transform = 'translateX(-100%)'; 
+                setTimeout(() => {
+                    taskbar.style.display = 'none'; 
+                }, 300); 
+            } else {
+                taskbar.style.display = 'flex'; 
+                setTimeout(() => {
+                    taskbar.style.transform = 'translateX(0)'; 
+                }, 10); 
+            }
+            taskbarVisible = !taskbarVisible; 
+        });
     }
-});
 
-function toggleDarkMode() {
-    var body = document.body;
-    var isDarkMode = body.classList.toggle("dark-mode");
-    document.getElementById("darkModeSwitch").checked = isDarkMode;
-}
+    if (closeTaskbar) {
+        closeTaskbar.addEventListener('click', function() {
+            taskbar.style.transform = 'translateX(-100%)'; 
+            setTimeout(() => {
+                taskbar.style.display = 'none'; 
+            }, 300); 
+        });
+    }
 
-window.onload = function() {
+    if (darkModeSwitch) {
+        darkModeSwitch.addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
+        });
+    }
+
+    // Mostrar el modal de EULA al cargar la página
     var modal = document.getElementById("eulaModal");
     var acceptBtn = document.getElementById("acceptEula");
     var declineBtn = document.getElementById("declineEula");
 
-    if (!localStorage.getItem("eulaAccepted")) {
+    if (modal && !localStorage.getItem("eulaAccepted")) {
         modal.style.display = "block";
     }
 
-    acceptBtn.onclick = function() {
-        localStorage.setItem("eulaAccepted", "true");
-        modal.style.display = "none";
-    };
-
-    declineBtn.onclick = function() {
-        window.location.href = "pagina_error.html";
-    };
-};
-
-
-
-
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
-
-function redirectToPage(url) {
-    const allowedPaths = ['/pagina_error.html', '/LICENCIA.txt']; 
-    const urlObj = new URL(url, window.location.origin);
-    if (allowedPaths.includes(urlObj.pathname)) {
-        window.location.href = url;
-    } else {
-        alert('URL no permitida.');
+    if (acceptBtn) {
+        acceptBtn.onclick = function() {
+            localStorage.setItem("eulaAccepted", "true");
+            modal.style.display = "none";
+        };
     }
-}
 
-
-function isValidNumber(value) {
-    return !isNaN(parseFloat(value)) && isFinite(value);
-}
-
-
-
-let taskbarVisible = false;
-
-document.getElementById('hamburger').addEventListener('click', function() {
-    const taskbar = document.getElementById('taskbar');
-    if (taskbarVisible) {
-        taskbar.style.transform = 'translateX(-100%)'; 
-        setTimeout(() => {
-            taskbar.style.display = 'none'; 
-        }, 300); 
-    } else {
-        taskbar.style.display = 'flex'; 
-        setTimeout(() => {
-            taskbar.style.transform = 'translateX(0)'; 
-        }, 10); 
+    if (declineBtn) {
+        declineBtn.onclick = function() {
+            window.location.href = "pagina_error.html";
+        };
     }
-    taskbarVisible = !taskbarVisible; 
 });
-
-document.getElementById('closeTaskbar').addEventListener('click', function() {
-    const taskbar = document.getElementById('taskbar');
-    taskbar.style.transform = 'translateX(-100%)'; 
-    setTimeout(() => {
-        taskbar.style.display = 'none'; 
-    }, 300); 
-});
-
-document.getElementById('darkModeSwitch').addEventListener('change', function() {
-    document.body.classList.toggle('dark-mode', this.checked);
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-});
-
-
-
-
-
-
-document.getElementById('themeSwitch').addEventListener('change', function() {
-    const theme = this.checked ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-    applyTheme();
-});
-
-
-function applyTheme() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-        document.body.classList.add('dark-mode');
-    } else {
-        document.body.classList.remove('dark-mode');
-    }
-}
-
-
-window.addEventListener('load', applyTheme);
 
 
 
