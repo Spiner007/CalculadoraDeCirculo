@@ -229,6 +229,9 @@ document.getElementById('darkModeSwitch').addEventListener('change', function() 
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+});
 
 
 

@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    body.loaded { display: block; }
+    
 
 }
 
@@ -214,8 +214,8 @@ body.dark-mode .calculator button[type="reset"] {
 }
 
 .taskbar {
-    display: fixed; 
-    position: absolute;
+
+    position: fixed;
     width: 250px;
     top: 325px; 
     left: 0;
@@ -273,6 +273,7 @@ body.dark-mode .calculator button[type="reset"] {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4); 
+    
 }
 
 .modal-content {
@@ -315,4 +316,53 @@ footer a {
     padding: 10px 0;
     text-align: center;
     color: rgb(222, 0, 247);
+
+
+
+
+
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .calculator {
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    #results {
+        margin-top: 10px;
+    }
+}
+
+
+input[type="number"], select {
+    width: 100%;
+    box-sizing: border-box; 
 }
